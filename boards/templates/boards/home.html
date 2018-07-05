@@ -1,13 +1,13 @@
 {% extends 'base.html' %} {% block breadcrumb %}
-<li class="breadcrumb-item active">Boards</li>
+<li class="breadcrumb-item active">Fórum</li>
 {% endblock %} {% block content %}
 <table class="table">
     <thead class="thead-inverse">
         <tr>
-            <th>Board</th>
-            <th>Posts</th>
-            <th>Topics</th>
-            <th>Last Post</th>
+            <th>Assuntos</th>
+            <th>Postagens</th>
+            <th>Tópicos</th>
+            <th>Última postagem</th>
         </tr>
     </thead>
     <tbody>
@@ -27,11 +27,11 @@
                 {% with post=board.get_last_post %} {% if post %}
                 <small>
                     <a href="{% url 'boards:topic_posts' board.pk post.topic.pk %}">
-                      By {{ post.created_by.username }} at {{ post.created_at }}
+                      By {{ post.created_by.username }} em {{ post.created_at }}
                     </a>
                 </small> {% else %}
                 <small class="text-muted">
-                         <em>No posts yet.</em>
+                         <em>Sem postagens ainda.</em>
                 </small> {% endif %} {% endwith %}
             </td>
 

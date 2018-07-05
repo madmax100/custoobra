@@ -1,21 +1,21 @@
 {% extends 'base.html' %} {% load static %} {% block title %}Post a reply{% endblock %} {% block stylesheet %}
-<link rel="stylesheet" href="{% static 'custoobra/css/simplemde.min.css' %}"> {% endblock %} {% block javascript %}
-<script src="{% static 'custoobra/js/simplemde.min.js' %}"></script>
+<link rel="stylesheet" href="{% static 'css/simplemde.min.css' %}"> {% endblock %} {% block javascript %}
+<script src="{% static 'js/simplemde.min.js' %}"></script>
 <script>
     var simplemde = new SimpleMDE({
         forceSync: true
     });
 </script>
 {% endblock %} {% block breadcrumb %}
-<li class="breadcrumb-item"><a href="{% url 'boards:home' %}">Boards</a></li>
+<li class="breadcrumb-item"><a href="{% url 'boards:home' %}">Fórum</a></li>
 <li class="breadcrumb-item"><a href="{% url 'boards:board_topics' topic.board.pk %}">{{ topic.board.name }}</a></li>
 <li class="breadcrumb-item"><a href="{% url 'boards:topic_posts' topic.board.pk topic.pk %}">{{ topic.subject }}</a></li>
-<li class="breadcrumb-item active">Post a reply</li>
+<li class="breadcrumb-item active">Postar uma resposta</li>
 {% endblock %} {% block content %}
 
 <form method="post" class="mb-4">
     {% csrf_token %} {% include 'includes/form.html' %}
-    <button type="submit" class="btn btn-success">Post a reply</button>
+    <button type="submit" class="btn btn-success">Postar uma resposta</button>
 </form>
 
 {% for post in topic.get_last_ten_posts %}

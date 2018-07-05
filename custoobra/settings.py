@@ -130,7 +130,7 @@ STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
-    'custoobra/static/',
+    'custoobra/static/custoobra/',
 ]
 
 LOGOUT_REDIRECT_URL = 'boards:home'

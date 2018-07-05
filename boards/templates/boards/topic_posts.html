@@ -1,5 +1,5 @@
 {% extends 'base.html' %} {% load gravatar %} {% load static %} {% block title %}{{ topic.subject }}{% endblock %} {% block breadcrumb %}
-<li class="breadcrumb-item"><a href="{% url 'boards:home' %}">Boards</a></li>
+<li class="breadcrumb-item"><a href="{% url 'boards:home' %}">Fórum</a></li>
 <li class="breadcrumb-item"><a href="{% url 'boards:board_topics' topic.board.pk %}">{{ topic.board.name }}</a></li>
 <li class="breadcrumb-item active">{{ topic.subject }}</li>
 {% endblock %} {% block content %}
